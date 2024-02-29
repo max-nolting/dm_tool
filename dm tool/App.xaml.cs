@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using dm_tool.view_models;
+using dm_tool.view_models.Tabs;
+using dm_tool.WindowHandlers;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
 
@@ -13,7 +16,13 @@ public partial class App : Application
         AppHost = Host.CreateDefaultBuilder()
             .ConfigureServices((hostContext, services) =>
             {
+                services.AddSingleton<TabHandler>();
+
                 services.AddSingleton<MainWindow>();
+                services.AddSingleton<MainViewModel>();
+
+                services.AddSingleton<NPCTabViewModel>();
+                services.AddSingleton<InitiativeTabViewModel>();
             })
             .Build();
     }
