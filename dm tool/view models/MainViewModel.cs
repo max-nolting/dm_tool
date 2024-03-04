@@ -1,9 +1,9 @@
 ﻿
-using dm_tool.view_models.Tabs;
+using DmTool.view_models.Tabs;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.ObjectModel;
 
-namespace dm_tool.view_models;
+namespace DmTool.view_models;
 
 public class MainViewModel(IServiceProvider serviceProvider)
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace dm_tool.view_models.Tabs;
+namespace DmTool.view_models.Tabs;
 
 public abstract class TabViewModelBase(string name) : ViewModelBase
 {

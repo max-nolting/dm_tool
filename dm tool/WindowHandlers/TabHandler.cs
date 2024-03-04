@@ -1,7 +1,7 @@
 ﻿
 using System.ComponentModel;
 
-namespace dm_tool.WindowHandlers;
+namespace DmTool.WindowHandlers;
 
 internal class TabHandler
 {

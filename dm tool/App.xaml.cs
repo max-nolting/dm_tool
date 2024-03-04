@@ -1,12 +1,12 @@
-﻿using dm_tool.view_models;
-using dm_tool.view_models.Tabs;
-using dm_tool.views;
-using dm_tool.WindowHandlers;
+﻿using DmTool.view_models;
+using DmTool.view_models.Tabs;
+using DmTool.views;
+using DmTool.WindowHandlers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
 
-namespace dm_tool;
+namespace DmTool;
 
 public partial class App : Application
 {

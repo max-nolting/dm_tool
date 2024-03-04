@@ -1,10 +1,10 @@
-﻿using dm_tool.view_models;
-using dm_tool.views;
+﻿using DmTool.view_models;
+using DmTool.views;
 using Microsoft.Extensions.DependencyInjection;
 using System.Windows;
 
 
-namespace dm_tool;
+namespace DmTool;
 
 public partial class MainWindow : Window
 {

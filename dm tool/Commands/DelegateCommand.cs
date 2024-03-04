@@ -1,7 +1,7 @@
 ﻿
 using System.Windows.Input;
 
-namespace dm_tool.Commands;
+namespace DmTool.Commands;
 
 internal class DelegateCommand(Action<object?> exe, Predicate<object?> canExe) : ICommand
 {

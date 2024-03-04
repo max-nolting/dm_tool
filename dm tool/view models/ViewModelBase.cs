@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace dm_tool.view_models;
+namespace DmTool.view_models;
 
 public abstract class ViewModelBase : INotifyPropertyChanged
 {
