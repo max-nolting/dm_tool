@@ -10,16 +10,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="models\**" />
+    <Compile Remove="view models\Commands\**" />
+    <EmbeddedResource Remove="models\**" />
+    <EmbeddedResource Remove="view models\Commands\**" />
+    <None Remove="models\**" />
+    <None Remove="view models\Commands\**" />
+    <Page Remove="models\**" />
+    <Page Remove="view models\Commands\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="models\" />
-    <Folder Include="view models\Commands\" />
   </ItemGroup>
 
   <ItemGroup>

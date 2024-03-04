@@ -15,13 +15,15 @@ public class MainViewModel : ViewModel
             _navigation = value;
             OnPropertyChanged();
         } }
-    public RelayCommand NavigateHomeCommand { get; set; }
-    public RelayCommand NavigateSettingsCommand { get; set; }
+    public RelayCommand NavigateToHomeCommand { get; set; }
+    public RelayCommand NavigateToSettingsCommand { get; set; }
+    public RelayCommand NavigateToNpcGeneratorCommand { get; set; }
 
     public MainViewModel(INavigationService navService) 
     { 
         Navigation = navService;
-        NavigateHomeCommand = new RelayCommand((o) => Navigation.NavigateTo<HomeViewModel>());
-        NavigateSettingsCommand = new RelayCommand((o) => Navigation.NavigateTo<SettingsViewModel>());
+        NavigateToHomeCommand = new RelayCommand((o) => Navigation.NavigateTo<HomeViewModel>());
+        NavigateToSettingsCommand = new RelayCommand((o) => Navigation.NavigateTo<SettingsViewModel>());
+        NavigateToNpcGeneratorCommand = new RelayCommand((o)=>Navigation.NavigateTo<NPCGeneratorViewModel>());
     }
 }

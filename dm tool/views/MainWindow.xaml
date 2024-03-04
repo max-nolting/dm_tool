@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DmTool.views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        Background="#009900">
+        Background="#252525">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
@@ -14,8 +14,9 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel>
-            <Button Height="30" Content="Home" Command="{Binding NavigateHomeCommand}"/>
-            <Button Height="30" Content="Settings" Command="{Binding NavigateSettingsCommand}"/>
+            <Button Height="30" Content="Home" Command="{Binding NavigateToHomeCommand}"/>
+            <Button Height="30" Content="NPC Generator" Command="{Binding NavigateToNpcGeneratorCommand}" />
+            <Button Height="30" Content="Settings" Command="{Binding NavigateToSettingsCommand}"/>
         </StackPanel>
 
         <ContentControl Grid.Column="1" Content="{Binding Navigation.CurrentView}">

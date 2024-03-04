@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:DmTool.views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="#101020">
+             Background="#252525">
     <Grid>
         <StackPanel VerticalAlignment="Center"
                     HorizontalAlignment="Center">
@@ -15,7 +15,8 @@
            FontSize="25"
            />
             <Button Content="Settings"
-                    Height="25"/>
+                    Height="25"
+                    Command="{Binding NavigateToSettingsCommand}"/>
         </StackPanel>
     </Grid>
 </UserControl>
