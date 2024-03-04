@@ -3,16 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:views="clr-namespace:dm_tool.views"
         mc:Ignorable="d"
         Title="DM Tool" Height="450" Width="800">
     <Grid>
-        <TabControl ItemsSource ="{Binding OpenTabs}">
-            <TabControl.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock
-                    Text="{Binding Name}" />
-                </DataTemplate>
-            </TabControl.ItemTemplate>
+        <TabControl>
+            <TabItem>
+                <views:NPCGenerator></views:NPCGenerator>
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

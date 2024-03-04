@@ -1,5 +1,6 @@
 ﻿using dm_tool.view_models;
 using dm_tool.view_models.Tabs;
+using dm_tool.views;
 using dm_tool.WindowHandlers;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,7 +22,10 @@ public partial class App : Application
                 services.AddSingleton<MainWindow>();
                 services.AddSingleton<MainViewModel>();
 
-                services.AddSingleton<NPCTabViewModel>();
+                services.AddSingleton<NPCGenerator>();
+                services.AddSingleton<NPCGeneratorViewModel>();
+
+                services.AddSingleton<NPCGeneratorViewModel>();
                 services.AddSingleton<InitiativeTabViewModel>();
             })
             .Build();

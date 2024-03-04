@@ -8,6 +8,6 @@ namespace dm_tool.view_models;
 public class MainViewModel(IServiceProvider serviceProvider)
 {
     public ObservableCollection<ViewModelBase>? OpenTabs { get; private set; } = 
-        [serviceProvider.GetRequiredService<NPCTabViewModel>(), 
+        [serviceProvider.GetRequiredService<NPCGeneratorViewModel>(), 
         serviceProvider.GetRequiredService<InitiativeTabViewModel>()];
 }
