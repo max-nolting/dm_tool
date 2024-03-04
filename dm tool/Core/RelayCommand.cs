@@ -1,9 +1,9 @@
 ﻿
 using System.Windows.Input;
 
-namespace DmTool.Commands;
+namespace DmTool.Core;
 
-internal class DelegateCommand(Action<object?> exe, Predicate<object?> canExe) : ICommand
+public class RelayCommand(Action<object?> exe, Predicate<object?> canExe) : ICommand
 {
     protected Predicate<object?> canExecute = canExe;
     readonly Action<object?> execute = exe;
@@ -16,5 +16,5 @@ internal class DelegateCommand(Action<object?> exe, Predicate<object?> canExe) :
 
     public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
 
-    public DelegateCommand(Action<object?> execute) : this(execute, (o) => true) { }
+    public RelayCommand(Action<object?> execute) : this(execute, (o) => true) { }
 }

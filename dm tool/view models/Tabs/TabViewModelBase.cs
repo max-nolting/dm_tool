@@ -1,7 +1,9 @@
 ﻿
-namespace DmTool.view_models.Tabs;
+using DmTool.Core;
 
-public abstract class TabViewModelBase(string name) : ViewModelBase
+namespace DmTool.ViewModels.Tabs;
+
+public abstract class TabViewModelBase(string name) : ViewModel
 {
     private string _name = name;
     public string Name
@@ -10,7 +12,7 @@ public abstract class TabViewModelBase(string name) : ViewModelBase
         set
         {
             _name = value;
-            RaisePropertyChanged();
+            OnPropertyChanged();
         }
     }
 }

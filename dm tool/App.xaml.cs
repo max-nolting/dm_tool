@@ -1,10 +1,11 @@
-﻿using DmTool.view_models;
-using DmTool.view_models.Tabs;
+﻿using DmTool.ViewModels.Tabs;
 using DmTool.views;
-using DmTool.WindowHandlers;
+using DmTool.ViewModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Windows;
+using DmTool.Core;
+using DmTool.Services;
 
 namespace DmTool;
 
@@ -17,16 +18,27 @@ public partial class App : Application
         AppHost = Host.CreateDefaultBuilder()
             .ConfigureServices((hostContext, services) =>
             {
-                services.AddSingleton<TabHandler>();
+                services.AddSingleton<MainWindow>(provider => new views.MainWindow
+                {
+                    DataContext = provider.GetRequiredService<MainViewModel>()
+                }) ;
 
-                services.AddSingleton<MainWindow>();
                 services.AddSingleton<MainViewModel>();
-
-                services.AddSingleton<NPCGenerator>();
+                services.AddSingleton<HomeViewModel>();
                 services.AddSingleton<NPCGeneratorViewModel>();
+                services.AddSingleton<SettingsViewModel>();
 
-                services.AddSingleton<NPCGeneratorViewModel>();
-                services.AddSingleton<InitiativeTabViewModel>();
+                services.AddSingleton<INavigationService, NavigationService>();
+                services.AddSingleton<Func<Type, ViewModel>>(provider => viewModelType => (ViewModel)provider.GetRequiredService(viewModelType));
+
+                //services.AddSingleton<TabHandler>();
+
+                //services.AddSingleton<MainViewModel>();
+
+                //services.AddSingleton<NPCGeneratorViewModel>();
+
+                //services.AddSingleton<NPCGeneratorViewModel>();
+                //services.AddSingleton<InitiativeTabViewModel>();
             })
             .Build();
     }
@@ -35,8 +47,8 @@ public partial class App : Application
     {
         await AppHost!.StartAsync();
         
-        var startupForm = AppHost.Services.GetRequiredService<MainWindow>();
-        startupForm.Show();
+        var mainWindow = AppHost.Services.GetRequiredService<MainWindow>();
+        mainWindow.Show();
 
         base.OnStartup(e);
     }

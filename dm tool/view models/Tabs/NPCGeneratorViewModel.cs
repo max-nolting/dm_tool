@@ -1,5 +1,5 @@
 ﻿
-namespace DmTool.view_models.Tabs;
+namespace DmTool.ViewModels.Tabs;
 
 public class NPCGeneratorViewModel() : TabViewModelBase("NPCs")
 {

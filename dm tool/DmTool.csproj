@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <Folder Include="models\" />
-    <Folder Include="ValueConverters\" />
+    <Folder Include="view models\Commands\" />
   </ItemGroup>
 
   <ItemGroup>
